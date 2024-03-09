@@ -23,4 +23,4 @@ spec:
   ports:
     - port: 3306
       name: sql
-      targetPort: http
+      targetPort: sql
