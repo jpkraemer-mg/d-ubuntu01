@@ -8,10 +8,10 @@ spec:
   ingressClassName: traefik
   tls:
     - hosts:
-        - kirabot-db.bot.darkoro.quest
-      secretName: darkoro-bot-wildcard-certificate
+        - kirabot-db.darkoro.quest
+      secretName: darkoro-cluster-wildcard-certificate
   rules:
-    - host: kirabot-db.bot.darkoro.quest
+    - host: kirabot-db.darkoro.quest
       http:
         paths:
           - path: /
