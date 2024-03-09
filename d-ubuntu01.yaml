@@ -50,6 +50,9 @@ spec:
       ingressIP: 78.46.103.132
     speedtest:
       enabled: true
+      image:
+        repository: darkoro/speedtest
+        tag: v0.1.0
     monitoring:
       grafana:
         adminPassword: "dasisteinadminpassword"
