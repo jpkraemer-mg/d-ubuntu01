@@ -16,19 +16,3 @@ metadata:
 spec:
   url: https://4allportal.github.io/helm-charts
   interval: 30s
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: GitRepository
-metadata:
-  name: vikunja
-  namespace: flux
-spec:
-  url: https://github.com/truecharts/charts
-  interval: 30s
-  ref:
-    branch: master
-  ignore: |
-    # ignore all
-    /*
-    # do not ignore vikunja
-    !/charts/stable/vikunja
