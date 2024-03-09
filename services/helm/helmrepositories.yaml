@@ -17,7 +17,7 @@ spec:
   url: https://4allportal.github.io/helm-charts
   interval: 30s
 ---
-apiVersion: source.toolkit.flkuxcd.io/v1beta2
+apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
   name: vikunja
