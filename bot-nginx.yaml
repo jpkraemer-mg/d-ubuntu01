@@ -1,0 +1,80 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mg-scp-bot
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scp-bot-reverse-proxy
+  namespace: mg-scp-bot
+  labels:
+    app: scp-bot-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scp-bot-proxy
+  template:
+    metadata:
+      labels:
+        app: scp-bot-proxy
+    spec:
+      volumes:
+        - name: nginx-config
+          configMap:
+            name: scp-bot-proxy-config
+      initContainers:
+      - name: init-scp-bot-proxy
+        image: busybox
+        command: ['sh', '-c', 'mkdir -p /etc/nginx/conf.d']
+        volumeMounts:
+          - name: nginx-config
+            mountPath: /etc/nginx/conf.d
+      containers:
+      - name: scp-bot-proxy
+        image: nginx
+        volumeMounts:
+          - name: nginx-config
+            mountPath: /etc/nginx/nginx.conf
+            subPath: nginx.conf
+            readOnly: true
+        ports:
+          - containerPort: 80
+            name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: scp-bot-reverse-proxy-svc
+  namespace: mg-scp-bot
+spec:
+  selector:
+    app: scp-bot-proxy
+  ports:
+    - port: 80
+      name: http
+      targetPort: http
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: scp-bot-reverse-proxy-ingress
+  namespace: mg-scp-bot
+spec:
+  tls:
+  - hosts:
+      - mg-char.darkoro.quest
+    secretName: darkoro-quest-wildcard-certificate
+  rules:
+  - host: mg-char.darkoro.quest
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: scp-bot-reverse-proxy-svc
+            port:
+              name: http

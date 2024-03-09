@@ -1,0 +1,47 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: local-storage
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+reclaimPolicy: Delete
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: local-storage-provisioner
+  namespace: flux
+spec:
+  interval: 1m
+  url: https://kubernetes-sigs.github.io/sig-storage-local-static-provisioner
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: local-storage-provisioner
+  namespace: flux
+spec:
+  chart:
+    spec:
+      chart: local-static-provisioner
+      sourceRef:
+        kind: HelmRepository
+        name: local-storage-provisioner
+        namespace: flux
+  interval: 1m
+  values:
+    classes:
+      - name: local-storage
+        hostDir: /mnt/disks
+        fsType: xfs
+    resources:
+      requests:
+        cpu: 10m
+        memory: 16Mi
+      limits:
+        cpu: 256m
+        memory: 512Mi
+    privileged: false
+

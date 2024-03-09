@@ -1,0 +1,123 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: 4allportal
+  namespace: flux
+spec:
+  url: https://4allportal.github.io/helm-charts
+  interval: 1m
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: cluster
+  namespace: flux
+spec:
+  chart:
+    spec:
+      chart: base-cluster
+      sourceRef:
+        name: 4allportal
+        kind: HelmRepository
+        namespace: flux
+  interval: 1m
+  values:
+    global:
+      baseDomain: "darkoro.quest"
+      clusterName: "d-ubuntu01"
+      certificates:
+        darkoro-quest-wildcard:
+          dnsNames:
+            - darkoro.quest
+            - "*.darkoro.quest"
+        darkoro-bot-wildcard:
+          dnsNames:
+            - bot.darkoro.quest
+            - "*.bot.darkoro.quest"
+      kubectl:
+        image:
+          tag: 1.29.2
+      helm:
+        image:
+          tag: 3.14.2
+    flux:
+      resources:
+        requests:
+          cpu: 0
+          memory: 0
+        limits:
+          cpu: 0
+          memory: 0
+    traefik:
+      maxReplicas: 4
+      resources:
+        requests:
+          cpu: 10m
+          memory: 16Mi
+        limits:
+          cpu: 1500m
+      serviceType: LoadBalancer
+      externalIP: 188.34.181.35
+      ingressIP: 188.34.181.35
+    speedtest:
+      enabled: true
+    monitoring:
+      grafana:
+        adminPassword: "dasisteinadminpassword"
+        dashboards:
+          fourAllPortal: false
+          mariadb: false
+        resources:
+          requests:
+            cpu: 10m
+            memory: 16Mi
+        sidecar:
+          resources:
+            requests:
+              cpu: 10m
+              memory: 16Mi
+      prometheus:
+        enabled: true
+        storage:
+          size: 25G
+      loki:
+        enabled: false
+      metricsServer:
+        enabled: false
+      jaeger:
+        enabled: false
+      securityScanning:
+        enabled: false
+      goldpinger:
+        enabled: false
+    dns:
+      email: "j.kraemer@4allportal.com"
+      apiKey: "4390ef1476d386e20178e8372d5d55e60dcb0"
+      domains:
+        - "darkoro.quest"
+    rbac:
+      admin:
+        users:
+          - j.kraemer
+      view:
+        users:
+          - j.kraemer
+      users:
+        - j.kraemer
+    descheduler:
+      enabled: true
+    certManager:
+      resources:
+        requests:
+          cpu: 10m
+          memory: 16Mi
+      caInjector:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 16Mi
+      webhook:
+        resources:
+          requests:
+            cpu: 10m
+            memory: 16Mi
