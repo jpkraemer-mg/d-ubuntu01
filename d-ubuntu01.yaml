@@ -76,7 +76,7 @@ spec:
       jaeger:
         enabled: false
       securityScanning:
-        enabled: false
+        enabled: true
       goldpinger:
         enabled: false
     dns:
