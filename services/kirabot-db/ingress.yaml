@@ -5,6 +5,7 @@ metadata:
   name: kirabot-phpmyadmin-ingress
   namespace: kirabot
 spec:
+  ingressClassName: traefik
   tls:
     - hosts:
         - kirabot-db.bot.darkoro.quest

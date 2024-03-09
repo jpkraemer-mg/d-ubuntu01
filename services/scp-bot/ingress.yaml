@@ -5,6 +5,7 @@ metadata:
   name: scp-bot-reverse-proxy-ingress
   namespace: mg-scp-bot
 spec:
+  ingressClassName: traefik
   tls:
     - hosts:
         - mg-char.darkoro.quest
