@@ -38,13 +38,13 @@ spec:
           cpu: 10m
           memory: 16Mi
     traefik:
-      maxReplicas: 4
+      maxReplicas: 2
       resources:
         requests:
           cpu: 10m
           memory: 16Mi
         limits:
-          cpu: 1500m
+          cpu: "1"
       serviceType: LoadBalancer
       externalIP: 78.46.103.132
       ingressIP: 78.46.103.132
