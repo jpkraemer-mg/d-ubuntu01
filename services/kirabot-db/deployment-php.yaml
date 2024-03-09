@@ -1,0 +1,35 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kirabot-phpmyadmin
+  namespace: kirabot
+  labels:
+    app: kirabot-phpmyadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kirabot-phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: kirabot-phpmyadmin
+    spec:
+      containers:
+        - name: scp-bot-proxy
+          image: phpmyadmin:5-apache
+          ports:
+            - containerPort: 80
+              name: http
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "toor"
+            - name: PMA_HOST
+              value: kirabot-db-svc.kirabot.svc.cluster.local
+            - name: PMA_PORT
+              value: "3306"
+            - name: PMA_USER
+              value: admin
+            - name: PMA_PASSWORD
+              value: "cracky"

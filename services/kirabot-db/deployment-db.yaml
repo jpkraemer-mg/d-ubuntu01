@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kirabot-db
+  namespace: kirabot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kirabot-db
+  template:
+    metadata:
+      labels:
+        app: kirabot-db
+    spec:
+      volumes:
+        - name: mysql
+          persistentVolumeClaim:
+            claimName: kirabot-db-pvc
+      containers:
+        - name: kirabot-db
+          image: mysql:8
+          ports:
+            - containerPort: 3306
+              name: sql
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "toor"
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: mysql

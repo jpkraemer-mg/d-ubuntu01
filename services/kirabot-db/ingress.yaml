@@ -1,0 +1,22 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kirabot-phpmyadmin-ingress
+  namespace: kirabot
+spec:
+  tls:
+    - hosts:
+        - kirabot-db.bot.darkoro.quest
+      secretName: darkoro-bot-wildcard-certificate
+  rules:
+    - host: kirabot-db.bot.darkoro.quest
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: kirabot-phpmyadmin-svc
+                port:
+                  name: http
