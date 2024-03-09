@@ -1,0 +1,11 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: 4allportal-git-cluster
+  namespace: flux
+spec:
+  interval: 1m
+  url: https://github.com/4ALLPORTAL/helm-charts
+  ref:
+    branch: feat/upgraade-from-deprecation
