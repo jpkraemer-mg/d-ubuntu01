@@ -54,8 +54,8 @@ spec:
         limits:
           cpu: 1500m
       serviceType: LoadBalancer
-      externalIP: 188.34.181.35
-      ingressIP: 188.34.181.35
+      externalIP: 78.46.103.132
+      ingressIP: 78.46.103.132
     speedtest:
       enabled: true
     monitoring:
