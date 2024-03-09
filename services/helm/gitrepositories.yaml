@@ -8,4 +8,4 @@ spec:
   interval: 1m
   url: https://github.com/4ALLPORTAL/helm-charts
   ref:
-    branch: feat/upgraade-from-deprecation
+    branch: feat/upgrade-from-deprecation
