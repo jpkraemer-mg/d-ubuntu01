@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: scp-bot-reverse-proxy-svc
+  namespace: mg-scp-bot
+spec:
+  selector:
+    app: scp-bot-proxy
+  ports:
+    - port: 80
+      name: http
+      targetPort: http

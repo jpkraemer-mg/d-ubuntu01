@@ -1,0 +1,22 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: scp-bot-reverse-proxy-ingress
+  namespace: mg-scp-bot
+spec:
+  tls:
+    - hosts:
+        - mg-char.darkoro.quest
+      secretName: darkoro-quest-wildcard-certificate
+  rules:
+    - host: mg-char.darkoro.quest
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: scp-bot-reverse-proxy-svc
+                port:
+                  name: http
