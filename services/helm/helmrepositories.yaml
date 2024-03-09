@@ -5,7 +5,7 @@ metadata:
   name: local-storage-provisioner
   namespace: flux
 spec:
-  interval: 1m
+  interval: 30s
   url: https://kubernetes-sigs.github.io/sig-storage-local-static-provisioner
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
@@ -15,4 +15,13 @@ metadata:
   namespace: flux
 spec:
   url: https://4allportal.github.io/helm-charts
-  interval: 1m
+  interval: 30s
+---
+apiVersion: source.toolkit.flkuxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: vikunja
+  namespace: flux
+spec:
+  url: https://truecharts.org/charts/stable/vikunja
+  interval: 30s
