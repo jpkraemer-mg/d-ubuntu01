@@ -7,9 +7,9 @@ metadata:
 spec:
   chart:
     spec:
-      chart: stable/vikunja
+      chart: ./charts/stable/vikunja
       sourceRef:
-        kind: HelmRepository
+        kind: GitRepository
         name: vikunja
         namespace: flux
   interval: 10s

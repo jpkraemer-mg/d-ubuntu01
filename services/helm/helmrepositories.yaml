@@ -18,10 +18,17 @@ spec:
   interval: 30s
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
+kind: GitRepository
 metadata:
   name: vikunja
   namespace: flux
 spec:
-  url: https://charts.truecharts.org
+  url: https://github.com/truecharts/charts
   interval: 30s
+  ref:
+    branch: master
+  ignore: |
+    # ignore all
+    /*
+    # do not ignore vikunja
+    !/charts/stable/vikunja
