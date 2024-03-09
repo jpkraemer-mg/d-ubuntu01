@@ -1,0 +1,18 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: local-storage-provisioner
+  namespace: flux
+spec:
+  interval: 1m
+  url: https://kubernetes-sigs.github.io/sig-storage-local-static-provisioner
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: 4allportal
+  namespace: flux
+spec:
+  url: https://4allportal.github.io/helm-charts
+  interval: 1m

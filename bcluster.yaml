@@ -1,11 +1,3 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: 4allportal
-  namespace: flux
-spec:
-  url: https://4allportal.github.io/helm-charts
-  interval: 1m
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
