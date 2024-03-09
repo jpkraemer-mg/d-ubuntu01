@@ -23,15 +23,13 @@ spec:
             - containerPort: 80
               name: http
           env:
-            - name: MYSQL_ROOT_PASSWORD
-              value: "toor"
             - name: PMA_HOST
               value: kirabot-db-svc.kirabot.svc.cluster.local
             - name: PMA_PORT
               value: "3306"
             - name: PMA_USER
-              value: admin
+              value: "root"
             - name: PMA_PASSWORD
-              value: "cracky"
+              value: "toor"
             - name: PMA_ARBITRARY
               value: "1"
