@@ -33,3 +33,5 @@ spec:
               value: admin
             - name: PMA_PASSWORD
               value: "cracky"
+            - name: PMA_ARBITRARY
+              value: "1"
