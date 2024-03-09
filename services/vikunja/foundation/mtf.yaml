@@ -1,0 +1,15 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vikunja-mtf-board
+  namespace: vikunja
+spec:
+  chart:
+    spec:
+      chart: vikunja
+      spec:
+        kind: HelmRepository
+        name: vikunja
+        namespace: flux
+  interval: 10s
