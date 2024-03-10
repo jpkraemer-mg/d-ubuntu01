@@ -58,7 +58,7 @@ spec:
           hosts:
             - host: foundation.darkoro.quest
               paths:
-                - path: /api
+                - path: /
           tls:
             - hosts:
                 - foundation.darkoro.quest
