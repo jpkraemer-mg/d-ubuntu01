@@ -42,13 +42,12 @@ spec:
                 enableregistration: false
               typesense:
                 url: vikunja-foundation-board-typesense:8108
-              postgres:
+              database:
+                host: vikunja-foundation-board-postgresql
                 port: 5432
                 username: vikunja-foundation
                 password: foundation-vikunja
                 db: foundation
-      env:
-        VIKUNJA_DATABASE_HOST: vikunja-foundation-board-postgresql
     frontend:
       ingress:
         main:
