@@ -16,12 +16,3 @@ metadata:
 spec:
   url: https://4allportal.github.io/helm-charts
   interval: 30s
----
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
-metadata:
-  name: vikunja
-  namespace: flux
-spec:
-  url: https://charts.pascaliske.dev
-  interval: 30s
