@@ -48,6 +48,8 @@ spec:
                 username: vikunja-foundation
                 password: foundation-vikunja
                 db: foundation
+      env:
+        VIKUNJA_DATABASE_HOST: vikunja-foundation-board-postgresql
     frontend:
       ingress:
         main:
