@@ -47,7 +47,7 @@ spec:
                 port: 5432
                 username: vikunja-foundation
                 password: foundation-vikunja
-                db: foundation
+                database: foundation
       env:
         VIKUNJA_DATABASE_HOST: vikunja-foundation-board-postgresql
     frontend:
