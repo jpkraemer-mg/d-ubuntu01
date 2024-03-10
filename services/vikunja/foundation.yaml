@@ -26,6 +26,8 @@ spec:
             nginx.ingress.kubernetes.io/proxy-body-size: "10m"
           hosts:
             - host: foundation.darkoro.quest
+              paths:
+                - path: /api
           tls:
             - hosts:
                 - foundation.darkoro.quest
@@ -47,6 +49,8 @@ spec:
             nginx.ingress.kubernetes.io/proxy-body-size: "10m"
           hosts:
             - host: foundation.darkoro.quest
+              paths:
+                - path: /
           tls:
             - hosts:
                 - foundation.darkoro.quest
