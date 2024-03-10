@@ -52,7 +52,7 @@ spec:
         VIKUNJA_DATABASE_HOST: vikunja-foundation-board-postgresql
     frontend:
       env:
-        VIKUNJA_API_URL: https://foundation.darkoro.quest/
+        VIKUNJA_API_URL: https://foundation.darkoro.quest/api/v1
       ingress:
         main:
           annotations:
