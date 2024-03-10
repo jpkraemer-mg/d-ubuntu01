@@ -28,6 +28,7 @@ spec:
             - host: foundation.darkoro.quest
               paths:
                 - path: /api
+                - path: /
           tls:
             - hosts:
                 - foundation.darkoro.quest
@@ -38,7 +39,7 @@ spec:
           data:
             config.yml: |
               service:
-                frontendUrl: https://foundation.darkoro.quest/
+                frontendUrl: foundation.darkoro.quest
                 enableregistration: false
               typesense:
                 url: vikunja-foundation-board-typesense:8108
@@ -53,16 +54,7 @@ spec:
     frontend:
       ingress:
         main:
-          annotations:
-            nginx.ingress.kubernetes.io/proxy-body-size: "10m"
-          hosts:
-            - host: foundation.darkoro.quest
-              paths:
-                - path: /
-          tls:
-            - hosts:
-                - foundation.darkoro.quest
-              secretName: darkoro-quest-wildcard-certificate
+          enabled: false
     postgresql:
       global:
         postgresql:
