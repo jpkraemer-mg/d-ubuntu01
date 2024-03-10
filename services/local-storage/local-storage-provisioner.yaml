@@ -12,6 +12,7 @@ spec:
         kind: HelmRepository
         name: local-storage-provisioner
         namespace: flux
+      version: 2.x.x
   interval: 1m
   values:
     classes:
