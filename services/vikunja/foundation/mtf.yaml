@@ -20,7 +20,7 @@ spec:
     persistentVolumeClaim:
       storageClassName: local-storage
     serviceAccount:
-      name: mtf-vikunja
+      name: default
     ingressRoute:
       create: true
       rule: "Host(`mtf-board.darkoro.quest`)"
