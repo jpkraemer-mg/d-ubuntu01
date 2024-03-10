@@ -21,10 +21,6 @@ spec:
       storageClassName: local-storage
     serviceAccount:
       name: default
-    ingressRoute:
-      create: true
-      rule: "Host(`mtf-board.darkoro.quest`)"
-      tlsSecretName: "darkoro-quest-wildcard-certificate"
     resources:
       requests:
         cpu: 10m
