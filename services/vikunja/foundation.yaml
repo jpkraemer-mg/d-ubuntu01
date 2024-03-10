@@ -1,0 +1,62 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: vikunja-foundation-board
+  namespace: vikunja
+spec:
+  chart:
+    spec:
+      chart: vikunja
+      sourceRef:
+        kind: HelmRepository
+        name: vikunja
+        namespace: flux
+      version: 0.x.x
+  interval: 30s
+  values:
+    api:
+      persistence:
+        data:
+          size: 24G
+          storageClass: local-storage
+      ingress:
+        annotations:
+          nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+        hosts:
+          - host: foundation.darkoro.quest
+        tls:
+          - hosts:
+              - foundation.darkoro.quest
+            secretName: darkoro-quest-wildcard-certificate
+      configMaps:
+        config:
+          enabled: true
+          data:
+            config.yml: |
+              service:
+                frontendUrl: https://foundation.darkoro.quest/
+                enableregistration: false
+              typesense:
+                url: vikunja-foundation-board-typesense:8108
+    frontend:
+      ingress:
+        annotations:
+          nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+        hosts:
+          - host: foundation.darkoro.quest
+        tls:
+          - hosts:
+              - foundation.darkoro.quest
+            secretName: darkoro-quest-wildcard-certificate
+    postgresql:
+      global:
+        postgresql:
+          auth:
+            username: vikunja-foundation
+            password: foundation-vikunja
+            database: foundation
+    typesense:
+      data:
+        size: 4G
+        storageClass: local-storage
