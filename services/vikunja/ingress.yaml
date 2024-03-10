@@ -1,0 +1,30 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vikunja-mtf-board-ingress
+  namespace: vikunja
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - mtf-board.darkoro.quest
+      secretName: darkoro-quest-wildcard-certificate
+  rules:
+    - host: mtf-board.darkoro.quest
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: vikunja-mtf-board-web
+                port:
+                  name: frontend
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: vikunja-mtf-board-web
+                port:
+                  name: api
