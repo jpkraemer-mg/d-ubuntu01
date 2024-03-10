@@ -27,7 +27,7 @@ spec:
           hosts:
             - host: foundation.darkoro.quest
               paths:
-                - path: /api
+                - path: /
           tls:
             - hosts:
                 - foundation.darkoro.quest
@@ -51,20 +51,9 @@ spec:
       env:
         VIKUNJA_DATABASE_HOST: vikunja-foundation-board-postgresql
     frontend:
-      env:
-        VIKUNJA_API_URL: https://foundation.darkoro.quest/
       ingress:
         main:
-          annotations:
-            nginx.ingress.kubernetes.io/proxy-body-size: "10m"
-          hosts:
-            - host: foundation.darkoro.quest
-              paths:
-                - path: /
-          tls:
-            - hosts:
-                - foundation.darkoro.quest
-              secretName: darkoro-quest-wildcard-certificate
+          enabled: false
     postgresql:
       global:
         postgresql:
