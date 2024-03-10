@@ -27,7 +27,7 @@ spec:
           hosts:
             - host: foundation.darkoro.quest
               paths:
-                - path: /
+                - path: /api
           tls:
             - hosts:
                 - foundation.darkoro.quest
@@ -53,7 +53,16 @@ spec:
     frontend:
       ingress:
         main:
-          enabled: false
+          annotations:
+            nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+          hosts:
+            - host: foundation.darkoro.quest
+              paths:
+                - path: /api
+          tls:
+            - hosts:
+                - foundation.darkoro.quest
+              secretName: darkoro-quest-wildcard-certificate
     postgresql:
       global:
         postgresql:
