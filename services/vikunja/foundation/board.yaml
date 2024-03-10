@@ -2,7 +2,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
-  name: vikunja-mtf-board
+  name: vikunja-foundation-board
   namespace: vikunja
 spec:
   chart:
@@ -19,6 +19,7 @@ spec:
       enabled: true
     persistentVolumeClaim:
       storageClassName: local-storage
+      size: 25G
     serviceAccount:
       name: default
     resources:
