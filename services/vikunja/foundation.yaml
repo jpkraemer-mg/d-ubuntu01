@@ -21,14 +21,15 @@ spec:
           size: 24G
           storageClass: local-storage
       ingress:
-        annotations:
-          nginx.ingress.kubernetes.io/proxy-body-size: "10m"
-        hosts:
-          - host: foundation.darkoro.quest
-        tls:
-          - hosts:
-              - foundation.darkoro.quest
-            secretName: darkoro-quest-wildcard-certificate
+        main:
+          annotations:
+            nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+          hosts:
+            - host: foundation.darkoro.quest
+          tls:
+            - hosts:
+                - foundation.darkoro.quest
+              secretName: darkoro-quest-wildcard-certificate
       configMaps:
         config:
           enabled: true
@@ -41,14 +42,15 @@ spec:
                 url: vikunja-foundation-board-typesense:8108
     frontend:
       ingress:
-        annotations:
-          nginx.ingress.kubernetes.io/proxy-body-size: "10m"
-        hosts:
-          - host: foundation.darkoro.quest
-        tls:
-          - hosts:
-              - foundation.darkoro.quest
-            secretName: darkoro-quest-wildcard-certificate
+        main:
+          annotations:
+            nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+          hosts:
+            - host: foundation.darkoro.quest
+          tls:
+            - hosts:
+                - foundation.darkoro.quest
+              secretName: darkoro-quest-wildcard-certificate
     postgresql:
       global:
         postgresql:
