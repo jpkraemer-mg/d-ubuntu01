@@ -9,7 +9,7 @@ spec:
   tls:
     - hosts:
         - kirabot-db.darkoro.quest
-      secretName: darkoro-cluster-wildcard-certificate
+      secretName: darkoro-quest-wildcard-certificate
   rules:
     - host: kirabot-db.darkoro.quest
       http:
