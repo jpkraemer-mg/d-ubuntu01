@@ -7,10 +7,10 @@ metadata:
 spec:
   chart:
     spec:
-      chart: ./charts/base-cluster
+      chart: base-cluster
       sourceRef:
-        name: 4allportal-git-cluster
-        kind: GitRepository
+        name: 4allportal
+        kind: HelmRepository
         namespace: flux
       version: 39.x.x
   interval: 1m
