@@ -32,7 +32,7 @@ spec:
             - name: FOUNDRY_USERNAME
               value: Darkoro
             - name: FOUNDRY_PASSWORD
-              value: fxc9vea2pzq3pfx-ZVG
+              value: jdu@tce4qnb8jha1FDX
             - name: FOUNDRY_ADMIN_KEY
               value: xtEPYu4suEZMkWAMeokyAZX-cTdg*2hB
             - name: CONTAINER_PRESERVE_CONFIG
