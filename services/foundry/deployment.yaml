@@ -30,9 +30,9 @@ spec:
               name: foundry-data
           env:
             - name: FOUNDRY_USERNAME
-              value: jkraemer994@gmail.com
+              value: estias
             - name: FOUNDRY_PASSWORD
-              value: jdu@tce4qnb8jha1FDX
+              value: WDK3npq0cze4nkp_ptw
             - name: FOUNDRY_ADMIN_KEY
               value: xtEPYu4suEZMkWAMeokyAZX-cTdg*2hB
             - name: CONTAINER_PRESERVE_CONFIG
