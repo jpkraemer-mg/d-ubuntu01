@@ -30,7 +30,7 @@ spec:
               name: foundry-data
           env:
             - name: FOUNDRY_USERNAME
-              value: estias
+              value: darkoro123@gmail.com
             - name: FOUNDRY_PASSWORD
               value: WDK3npq0cze4nkp_ptw
             - name: FOUNDRY_ADMIN_KEY
