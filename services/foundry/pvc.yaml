@@ -6,7 +6,6 @@ metadata:
   namespace: foundry
 spec:
   accessModes:
-    - ReadWriteMany
     - ReadWriteOnce
   resources:
     requests:
