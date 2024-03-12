@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: foundry-pvc
+  namespace: foundry
+spec:
+  accessModes:
+    - ReadWriteMany
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 25G
+  storageClassName: local-storage
+  volumeMode: Filesystem

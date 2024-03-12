@@ -1,0 +1,23 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: foundry-ingress
+  namespace: foundry
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - foundry.darkoro.quest
+      secretName: darkoro-quest-wildcard-certificate
+  rules:
+    - host: foundry.darkoro.quest
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: foundry-svc
+                port:
+                  name: http

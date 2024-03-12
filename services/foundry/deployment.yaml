@@ -1,0 +1,51 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foundry-deployment
+  namespace: foundry
+  labels:
+    app: foundry
+spec:
+  selector:
+    matchLabels:
+      app: foundry
+  template:
+    metadata:
+      labels:
+        app: foundry
+    spec:
+      volumes:
+        - name: foundry-data
+          persistentVolumeClaim:
+            claimName: foundry-pvc
+      containers:
+        - name: foundry
+          image: felddy/foundryvtt:10.303
+          ports:
+            - containerPort: 30000
+              name: http
+          volumeMounts:
+            - mountPath: /data
+              name: foundry-data
+          env:
+            - name: FOUNDRY_USERNAME
+              value: Darkoro
+            - name: FOUNDRY_PASSWORD
+              value: fxc9vea2pzq3pfx-ZVG
+            - name: FOUNDRY_ADMIN_KEY
+              value: xtEPYu4suEZMkWAMeokyAZX-cTdg*2hB
+            - name: CONTAINER_PRESERVE_CONFIG
+              value: "true"
+            - name: FOUNDRY_IP_DISCOVERY
+              value: "false"
+            - name: FOUNDRY_HOSTNAME
+              value: foundry.darkoro.quest
+            - name: FOUNDRY_PROXY_SSL
+              value: "true"
+            - name: FOUNDRY_PROTOCOL
+              value: "4"
+            - name: FOUNDRY_PROXY_PORT
+              value: "80"
+            - name: FOUNDRY_VERSION
+              value: "10.303"

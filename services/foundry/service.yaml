@@ -1,0 +1,13 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: foundry-svc
+  namespace: foundry
+spec:
+  selector:
+    app: foundry
+  ports:
+    - port: 80
+      name: http
+      targetPort: http
