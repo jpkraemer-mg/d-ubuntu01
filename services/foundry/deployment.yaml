@@ -33,6 +33,8 @@ spec:
               value: darkoro123@gmail.com
             - name: FOUNDRY_PASSWORD
               value: WDK3npq0cze4nkp_ptw
+            - name: FOUNDRY_RELEASE_URL
+              value: https://foundryvtt.s3.amazonaws.com/releases/10.303/FoundryVTT-10.303.zip?AWSAccessKeyId=AKIA2KJE5YZ3BCQQ6DH3&Signature=STG7uE%2B9HeC74VVH9qkLP37ts18%3D&Expires=1710266629
             - name: FOUNDRY_ADMIN_KEY
               value: xtEPYu4suEZMkWAMeokyAZX-cTdg*2hB
             - name: CONTAINER_PRESERVE_CONFIG
