@@ -1,78 +1,78 @@
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta2
-kind: HelmRelease
-metadata:
-  name: vikunja-foundation-board
-  namespace: vikunja
-spec:
-  chart:
-    spec:
-      chart: vikunja
-      sourceRef:
-        kind: HelmRepository
-        name: vikunja
-        namespace: flux
-      version: 0.x.x
-  interval: 30s
-  values:
-    api:
-      persistence:
-        data:
-          size: 24G
-          storageClass: local-storage
-      ingress:
-        main:
-          annotations:
-            nginx.ingress.kubernetes.io/proxy-body-size: "10m"
-          hosts:
-            - host: foundation.darkoro.quest
-              paths:
-                - path: /api
-          tls:
-            - hosts:
-                - foundation.darkoro.quest
-              secretName: darkoro-quest-wildcard-certificate
-      configMaps:
-        config:
-          enabled: true
-          data:
-            config.yml: |
-              service:
-                frontendUrl: foundation.darkoro.quest
-                enableregistration: false
-              typesense:
-                url: vikunja-foundation-board-typesense:8108
-              database:
-                host: vikunja-foundation-board-postgresql
-                port: 5432
-                username: vikunja-foundation
-                password: foundation-vikunja
-                database: foundation
-      env:
-        VIKUNJA_DATABASE_HOST: vikunja-foundation-board-postgresql
-    frontend:
-      env:
-        VIKUNJA_API_URL: https://foundation.darkoro.quest/api/v1
-      ingress:
-        main:
-          annotations:
-            nginx.ingress.kubernetes.io/proxy-body-size: "10m"
-          hosts:
-            - host: foundation.darkoro.quest
-              paths:
-                - path: /
-          tls:
-            - hosts:
-                - foundation.darkoro.quest
-              secretName: darkoro-quest-wildcard-certificate
-    postgresql:
-      global:
-        postgresql:
-          auth:
-            username: vikunja-foundation
-            password: foundation-vikunja
-            database: foundation
-    typesense:
-      data:
-        size: 4G
-        storageClass: local-storage
+#---
+#apiVersion: helm.toolkit.fluxcd.io/v2beta2
+#kind: HelmRelease
+#metadata:
+#  name: vikunja-foundation-board
+#  namespace: vikunja
+#spec:
+#  chart:
+#    spec:
+#      chart: vikunja
+#      sourceRef:
+#        kind: HelmRepository
+#        name: vikunja
+#        namespace: flux
+#      version: 0.x.x
+#  interval: 30s
+#  values:
+#    api:
+#      persistence:
+#        data:
+#          size: 24G
+#          storageClass: local-storage
+#      ingress:
+#        main:
+#          annotations:
+#            nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+#          hosts:
+#            - host: foundation.darkoro.quest
+#              paths:
+#                - path: /api
+#          tls:
+#            - hosts:
+#                - foundation.darkoro.quest
+#              secretName: darkoro-quest-wildcard-certificate
+#      configMaps:
+#        config:
+#          enabled: true
+#          data:
+#            config.yml: |
+#              service:
+#                frontendUrl: foundation.darkoro.quest
+#                enableregistration: false
+#              typesense:
+#                url: vikunja-foundation-board-typesense:8108
+#              database:
+#                host: vikunja-foundation-board-postgresql
+#                port: 5432
+#                username: vikunja-foundation
+#                password: foundation-vikunja
+#                database: foundation
+#      env:
+#        VIKUNJA_DATABASE_HOST: vikunja-foundation-board-postgresql
+#    frontend:
+#      env:
+#        VIKUNJA_API_URL: https://foundation.darkoro.quest/api/v1
+#      ingress:
+#        main:
+#          annotations:
+#            nginx.ingress.kubernetes.io/proxy-body-size: "10m"
+#          hosts:
+#            - host: foundation.darkoro.quest
+#              paths:
+#                - path: /
+#          tls:
+#            - hosts:
+#                - foundation.darkoro.quest
+#              secretName: darkoro-quest-wildcard-certificate
+#    postgresql:
+#      global:
+#        postgresql:
+#          auth:
+#            username: vikunja-foundation
+#            password: foundation-vikunja
+#            database: foundation
+#    typesense:
+#      data:
+#        size: 4G
+#        storageClass: local-storage
