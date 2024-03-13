@@ -34,7 +34,7 @@ spec:
               name: foundry-data
           env:
             - name: FOUNDRY_USERNAME
-              value: darkoro123@gmail.com
+              value: Estias
             - name: FOUNDRY_PASSWORD
               value: WDK3npq0cze4nkp_ptw
             - name: FOUNDRY_RELEASE_URL
