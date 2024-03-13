@@ -11,3 +11,16 @@ spec:
     - port: 80
       name: http
       targetPort: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: foundry-proxy-svc
+  namespace: foundry
+spec:
+  selector:
+    app: foundry-proxy
+  ports:
+    - port: 80
+      name: proxy
+      targetPort: proxy
