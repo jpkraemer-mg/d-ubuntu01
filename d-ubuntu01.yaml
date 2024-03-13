@@ -49,7 +49,7 @@ spec:
       serviceType: LoadBalancer
       externalIP: 88.99.65.50
       ingressIP: 88.99.65.50
-      loadbalancerIP: 192.168.1.11
+      loadBalancerIP: 192.168.1.11
     speedtest:
       enabled: true
       image:
