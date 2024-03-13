@@ -47,8 +47,9 @@ spec:
         limits:
           cpu: "1"
       serviceType: LoadBalancer
-      externalIP: 78.46.103.132
-      ingressIP: 78.46.103.132
+      externalIP: 88.99.65.50
+      ingressIP: 88.99.65.50
+      loadbalancerIP: 192.168.1.11
     speedtest:
       enabled: true
       image:
