@@ -56,7 +56,7 @@ spec:
             - name: FOUNDRY_VERSION
               value: "10.303"
         - name: foundry-proxy
-          image: ddb-proxy:v0.0.25
+          image: ghcr.io/mrprimate/ddb-proxy
           ports:
             - containerPort: 3000
               name: proxy
