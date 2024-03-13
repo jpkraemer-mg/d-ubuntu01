@@ -19,7 +19,7 @@ metadata:
   namespace: foundry
 spec:
   selector:
-    app: foundry-proxy
+    app: foundry
   ports:
     - port: 80
       name: proxy

@@ -21,3 +21,33 @@ spec:
                 name: foundry-svc
                 port:
                   name: http
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: foundry-proxy-ingress
+  namespace: foundry
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts:
+        - proxy.darkoro.quest
+      secretName: darkoro-quest-wildcard-certificate
+  rules:
+    - host: proxy.darkoro.quest
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: foundry-proxy-svc
+                port:
+                  name: proxy
+          - path: /ping
+            pathType: Prefix
+            backend:
+              service:
+                name: foundry-proxy-svc
+                port:
+                  name: proxy
