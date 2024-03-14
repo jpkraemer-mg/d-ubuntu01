@@ -24,7 +24,7 @@ spec:
   selector:
     matchLabels:
       app: csi-cephfsplugin-provisioner
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
