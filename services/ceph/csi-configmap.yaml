@@ -6,4 +6,11 @@ metadata:
   namespace: ceph
 data:
   config.json: |-
-    []
+    [
+      {
+        "clusterID": "e06c83a4-8391-405b-a647-7db485125736",
+        "monitors": [
+          "192.168.1.14:6789"
+        ]
+      }
+    ]
