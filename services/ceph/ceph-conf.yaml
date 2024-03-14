@@ -7,7 +7,7 @@ data:
     auth_service_required = cephx
     auth_client_required = cephx
 
-  keyring: |
+  keyring: "AQAkmvJ1c55AOxAAD5LBAJbXL3FHdk4vibVadQ=="
 metadata:
   name: ceph-config
   namespace: ceph
