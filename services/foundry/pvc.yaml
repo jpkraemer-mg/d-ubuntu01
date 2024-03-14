@@ -9,6 +9,6 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 25G
-  storageClassName: local-storage
+      storage: 5G
+  storageClassName: ceph-rbd
   volumeMode: Filesystem

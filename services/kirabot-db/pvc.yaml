@@ -10,5 +10,5 @@ spec:
   resources:
     requests:
       storage: 3G
-  storageClassName: local-storage
+  storageClassName: ceph-rbd
   volumeMode: Filesystem
