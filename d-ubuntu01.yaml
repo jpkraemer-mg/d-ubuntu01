@@ -77,7 +77,7 @@ spec:
       loki:
         enabled: false
       metricsServer:
-        enabled: false
+        enabled: true
       jaeger:
         enabled: false
       securityScanning:
