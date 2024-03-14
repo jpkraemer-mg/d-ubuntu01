@@ -73,7 +73,7 @@ spec:
       prometheus:
         enabled: true
         storage:
-          size: 25G
+          size: 10G
       loki:
         enabled: false
       metricsServer:
