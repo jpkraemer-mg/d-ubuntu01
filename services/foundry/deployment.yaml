@@ -37,10 +37,10 @@ spec:
               value: xtEPYu4suEZMkWAMeokyAZX-cTdg*2hB
             - name: FOUNDRY_LICENSE_KEY
               value: STN5-2QPK-YC2O-WF79-6PQ2-TJIF
-            - name: FOUNDRY_USERNAME
-              value: Estias
-            - name: FOUNDRY_PASSWORD
-              value: WDK3npq0cze4nkp_ptw
+#            - name: FOUNDRY_USERNAME
+#              value: Estias
+#            - name: FOUNDRY_PASSWORD
+#              value: WDK3npq0cze4nkp_ptw
             - name: CONTAINER_PRESERVE_CONFIG
               value: "true"
             - name: FOUNDRY_IP_DISCOVERY
