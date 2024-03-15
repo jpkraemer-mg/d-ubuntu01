@@ -74,6 +74,10 @@ spec:
         enabled: true
         storage:
           size: 10G
+        resources:
+          requests:
+            cpu: 10m
+            memory: 16Mi
       loki:
         enabled: false
       metricsServer:
