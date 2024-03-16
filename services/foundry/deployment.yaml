@@ -29,10 +29,18 @@ spec:
             - mountPath: /data
               name: foundry-data
           env:
-            - name: FOUNDRY_RELEASE_URL
-              value: https://foundryvtt.s3.amazonaws.com/releases/10.303/FoundryVTT-10.303.zip?AWSAccessKeyId=AKIA2KJE5YZ3BCQQ6DH3&Signature=zmrn%2BZD4XVGjoVBocPkp5yjIeRI%3D&Expires=1710458025
+            - name: CONTAINER_CACHE
+              value: /data/container_cache
+            - name: CONTAINER_CACHE_SIZE
+              value: "2"
             - name: FOUNDRY_ADMIN_KEY
               value: xtEPYu4suEZMkWAMeokyAZX-cTdg*2hB
+            - name: FOUNDRY_LICENSE_KEY
+              value: STN5-2QPK-YC2O-WF79-6PQ2-TJIF
+#            - name: FOUNDRY_USERNAME
+#              value: Estias
+#            - name: FOUNDRY_PASSWORD
+#              value: WDK3npq0cze4nkp_ptw
             - name: CONTAINER_PRESERVE_CONFIG
               value: "true"
             - name: FOUNDRY_IP_DISCOVERY
@@ -47,6 +55,10 @@ spec:
               value: "80"
             - name: FOUNDRY_VERSION
               value: "10.303"
+          resources:
+            requests:
+              cpu: 10m
+              memory: 16Mi
         - name: foundry-proxy
           image: ghcr.io/mrprimate/ddb-proxy
           ports:
