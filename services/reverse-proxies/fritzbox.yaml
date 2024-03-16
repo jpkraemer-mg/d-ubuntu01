@@ -7,13 +7,12 @@ metadata:
 spec:
   chart:
     spec:
-      chart:
-        name: nginx
-        sourceRef:
-          kind: HelmRepository
-          namespace: flux
-          name: bitnami
-        version: 15.x.x
+      chart: nginx
+      sourceRef:
+        kind: HelmRepository
+        namespace: flux
+        name: bitnami
+      version: 15.x.x
   interval: 1m
   values:
     containerPorts:
