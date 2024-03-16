@@ -2,8 +2,8 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
-  name: fritzbox-reverse-proxy
-  namespace: fritzbox
+  name: proxmox-reverse-proxy
+  namespace: proxmox
 spec:
   chart:
     spec:
