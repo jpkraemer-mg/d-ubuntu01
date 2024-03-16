@@ -1,0 +1,53 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: fritzbox-reverse-proxy
+  namespace: metadata
+spec:
+  chart:
+    spec:
+      chart:
+        name: nginx
+        sourceRef:
+          kind: HelmRepository
+          namespace: flux
+          name: bitnami
+        version: 15.x.x
+  interval: 1m
+  values:
+    containerPorts:
+      https: "8443"
+    resources:
+      limits:
+        cpu: 50m
+        memory: 32Mi
+      requests:
+        cpu: 5m
+        memory: 4Mi
+    livenessProbe:
+      enabled: false
+    readinessprobe:
+      enabled: false
+    serverBlock: |-
+      server {
+        listen 0.0.0.0;
+  
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+  
+        location / {
+            proxy_pass https://5gj311t4whopzp27.myfritz.net:46444;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+      }
+    service:
+      type: ClusterIP
+    ingress:
+      enabled: true
+      hostname: fritzbox.darkoro.quest
+      extraTls:
+        - hosts:
+            - fritzbox.darkoro.quest
+          secretName: darkoro-quest-wildcard-certificate
