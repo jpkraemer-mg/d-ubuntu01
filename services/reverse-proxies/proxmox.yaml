@@ -35,7 +35,7 @@ spec:
         index index.html index.htm index.nginx-debian.html;
       
         location / {
-            proxy_pass https://88.99.86.57:8006;
+            proxy_pass https://88.99.65.57:8006;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
         }
