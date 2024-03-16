@@ -26,7 +26,7 @@ spec:
         memory: 4Mi
     livenessProbe:
       enabled: false
-    readinessprobe:
+    readinessProbe:
       enabled: false
     serverBlock: |-
       server {
