@@ -1,0 +1,74 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: scp-bot-reverse-proxy
+  namespace: mg-scp-bot
+spec:
+  chart:
+    spec:
+      chart: nginx
+      sourceRef:
+        kind: HelmRepository
+        namespace: flux
+        name: bitnami
+      version: 15.x.x
+  interval: 1m
+  values:
+    resources:
+      limits:
+        cpu: 50m
+        memory: 32Mi
+      requests:
+        cpu: 5m
+        memory: 4Mi
+    livenessProbe:
+      enabled: false
+    readinessProbe:
+      enabled: false
+    serverBlock: |-
+      server {
+        listen 0.0.0.0:8080;
+  
+        root /var/www/html;
+        index index.html index.htm index.nginx-debian.html;
+  
+        location / {
+            proxy_pass http://45.157.232.25:30001;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+  
+        location /callback/ {
+            proxy_pass http://45.157.232.25:30001;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+  
+        location /me/ {
+            proxy_pass http://45.157.232.25:30001;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+  
+        location /login/ {
+            proxy_pass http://45.157.232.25:30001;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+  
+        location /logout/ {
+            proxy_pass http://45.157.232.25:30001;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+        }
+      }
+    service:
+      type: ClusterIP
+    ingress:
+      enabled: true
+      hostname: mg-char.darkoro.quest
+      extraTls:
+        - hosts:
+            - mg-char.darkoro.quest
+          secretName: darkoro-quest-wildcard-certificate
