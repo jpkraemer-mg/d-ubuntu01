@@ -15,8 +15,6 @@ spec:
       version: 15.x.x
   interval: 1m
   values:
-    containerPorts:
-      https: "8443"
     resources:
       limits:
         cpu: 50m
