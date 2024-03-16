@@ -15,10 +15,6 @@ spec:
       version: 15.x.x
   interval: 1m
   values:
-    containerSecurityContext:
-      enabled: false
-    podSecurityContext:
-      enabled: false
     resources:
       limits:
         cpu: 50m
@@ -32,7 +28,7 @@ spec:
       enabled: false
     serverBlock: |-
       server {
-        listen 0.0.0.0;
+        listen 0.0.0.0:8080;
   
         root /var/www/html;
         index index.html index.htm index.nginx-debian.html;
