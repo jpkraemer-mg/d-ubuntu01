@@ -15,7 +15,7 @@ spec:
   interval: 15s
   values:
     service:
-      type: ClusterIP
+      type: NodePort
     resources:
       requests:
         cpu: 10m
