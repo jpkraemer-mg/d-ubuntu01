@@ -73,7 +73,7 @@ spec:
       prometheus:
         enabled: true
         storage:
-          size: 10G
+          size: 15G
         resources:
           requests:
             cpu: 10m
