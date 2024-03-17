@@ -25,3 +25,12 @@ metadata:
 spec:
   url: https://kolaente.dev/api/packages/vikunja/helm
   interval: 30s
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: ksandermann
+  namespace: flux
+spec:
+  url: http://charts.sandermann.cloud
+  interval: 30s
