@@ -14,6 +14,7 @@ spec:
         name: minecraft
       version: 4.x.x
   interval: 15s
+  timeout: 2m
   values:
     image:
       tag: latest
