@@ -25,7 +25,7 @@ spec:
     minecraftServer:
       eula: "TRUE"
       type: "CURSEFORGE"
-      cfServerMod: "https://www.curseforge.com/minecraft/modpacks/ftb-presents-direwolf20-1-12/download/3086774"
+      version: "1.12"
       difficulty: "normal"
       ops: "SADarkoro"
       maxPlayers: 5
