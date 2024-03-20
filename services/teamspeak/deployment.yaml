@@ -15,7 +15,7 @@ spec:
   interval: 15s
   values:
     service:
-      type: NodePort
+      type: LoadBalancer
     resources:
       requests:
         cpu: 10m
