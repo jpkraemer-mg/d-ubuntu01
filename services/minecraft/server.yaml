@@ -29,9 +29,9 @@ spec:
         memory: 16Gi
     minecraftServer:
       eula: "TRUE"
-      type: "CURSEFORGE"
+      type: "FORGE"
       cfServerMod: "https://mediafilez.forgecdn.net/files/3086/774/FTB%20Presents%20Direwolf20%201.12-2.8.0.zip"
-      version: "1.7.10"
+      version: "1.12.2"
       difficulty: "normal"
       ops: "SADarkoro"
       maxPlayers: 5
