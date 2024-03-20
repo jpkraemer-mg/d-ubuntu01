@@ -35,7 +35,7 @@ spec:
         index index.html index.htm index.nginx-debian.html;
   
         location / {
-            proxy_pass https://[2001:9e8:4035:ef0e:e72:74ff:feb2:5cba]:46444;
+            proxy_pass https://5gj311t4whopzp27.myfritz.net:46444;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
         }
