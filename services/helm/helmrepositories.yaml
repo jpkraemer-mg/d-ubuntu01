@@ -34,3 +34,12 @@ metadata:
 spec:
   url: http://charts.sandermann.cloud
   interval: 30s
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: immich
+  namespace: flux
+spec:
+  url: https://immich-app.github.io/immich-charts
+  interval: 30s
