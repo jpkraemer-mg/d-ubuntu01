@@ -30,9 +30,9 @@ spec:
       eula: "TRUE"
       type: "FTBA"
       version: "1.7.10"
-      generalPack: "https://www.curseforge.com/api/v1/mods/281999/files/3086774/download"
+#      generalPack: "https://www.curseforge.com/api/v1/mods/281999/files/3086774/download"
       ftbModpackId: 101
-      ftbModpackVersionId: 101
+#      ftbModpackVersionId: 101
       difficulty: "normal"
       ops: "SADarkoro"
       maxPlayers: 5
@@ -42,7 +42,6 @@ spec:
       onlineMode: "default"
       memory: "8192Mi"
       jvmOpts: "-Djava.awt.headless=true -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M"
-      jvmXXOpts: "-Xms4G -Xmx10G"
       externalIPs:
         - 192.168.1.15
     persistence:
