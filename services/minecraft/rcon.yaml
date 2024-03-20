@@ -22,7 +22,7 @@ spec:
       enabled: true
       className: traefik
       host: rcon.darkoro.quest
-      pathType: Prefic
+      pathType: Prefix
       tls:
         - secretName: darkoro-quest-wildcard-certificate
           hosts:
