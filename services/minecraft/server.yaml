@@ -26,7 +26,7 @@ spec:
       eula: "TRUE"
       type: "CURSEFORGE"
       version: "1.12"
-      cfServerMod: "direwolf20"
+      cfServerMod: "ftb-presents-direwolf20-1-12"
       difficulty: "normal"
       ops: "SADarkoro"
       maxPlayers: 5
