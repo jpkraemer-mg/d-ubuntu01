@@ -29,7 +29,8 @@ spec:
         memory: 16Gi
     minecraftServer:
       eula: "TRUE"
-      type: "VANILLA"
+      type: "CURSEFORGE"
+      cfServerMod: "https://www.curseforge.com/minecraft/modpacks/ftb-presents-direwolf20-1-12/download/3086774"
       version: "1.7.10"
       difficulty: "normal"
       ops: "SADarkoro"
@@ -39,7 +40,6 @@ spec:
       motd: "IFA2B in Direwolf weil Baum"
       onlineMode: "default"
       memory: 8192M
-      jvmXXOpts: "-Xms2048M -Xmx8192M"
       jvmOpts: "-Djava.awt.headless=true -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M"
       externalIPs:
         - 192.168.1.15
