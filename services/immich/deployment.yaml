@@ -30,9 +30,9 @@ spec:
             - host: immich.darkoro.quest
               paths:
                 - path: "/"
-          tls:
-            - hosts:
-                - host: immich.darkoro.quest
-              secretName: darkoro-quest-wildcard-certificate
+          #tls:
+           # - hosts:
+            #    - host: immich.darkoro.quest
+             # secretName: darkoro-quest-wildcard-certificate
     machine-learning:
       enabled: false
