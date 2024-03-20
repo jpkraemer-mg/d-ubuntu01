@@ -12,6 +12,7 @@ spec:
         kind: HelmRepository
         name: immich
         namespace: flux
+      version: 0.x.x
   interval: 15s
   values:
     image:

@@ -43,3 +43,12 @@ metadata:
 spec:
   url: https://immich-app.github.io/immich-charts
   interval: 30s
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: nextcloud
+  namespace: flux
+spec:
+  url: https://nextcloud.github.io/helm/
+  interval: 30s
