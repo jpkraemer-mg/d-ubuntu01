@@ -16,7 +16,9 @@ spec:
   interval: 15s
   values:
     image:
-      tag: java8
+      tag: java8-multiarch
+    podSecurityContext:
+      runAsNonRoot: false
     resources:
       requests:
         cpu: 10m
@@ -26,9 +28,9 @@ spec:
         memory: 16Gi
     minecraftServer:
       eula: "TRUE"
-      type: "CURSEFORGE"
+      type: "FTBA"
       version: "1.7.10"
-      cfServerMod: "https://www.curseforge.com/api/v1/mods/281999/files/3086774/download"
+      generalPack: "https://www.curseforge.com/api/v1/mods/281999/files/3086774/download"
       difficulty: "normal"
       ops: "SADarkoro"
       maxPlayers: 5
