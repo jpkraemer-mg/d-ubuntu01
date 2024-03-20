@@ -28,11 +28,11 @@ spec:
       cfServerMod: "https://www.curseforge.com/minecraft/modpacks/ftb-presents-direwolf20-1-12/install/3086774"
       difficulty: "normal"
       ops: "SADarkoro"
-      maxPlayers: "5"
-      maxTickTime: "-1"
-      spawnProtection: "0"
+      maxPlayers: 5
+      maxTickTime: -1
+      spawnProtection: 0
       motd: "IFA2B in Direwolf weil Baum"
-      onlineMode: "false"
+      onlineMode: "default"
       memory: "8192Mi"
       externalIPs:
         - 192.168.1.15
