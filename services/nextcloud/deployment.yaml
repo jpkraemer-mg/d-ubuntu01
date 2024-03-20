@@ -17,6 +17,9 @@ spec:
   values:
     ingress:
       enabled: true
+      path: "/"
+      pathType: Prefix
+      className: traefik
       tls:
         - hosts:
             - nextcloud.darkoro.quest
