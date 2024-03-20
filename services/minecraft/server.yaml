@@ -1,0 +1,43 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: minecraft-server
+  namespace: minecraft
+spec:
+  chart:
+    spec:
+      chart: minecraft
+      sourceRef:
+        kind: HelmRepository
+        namespace: flux
+        name: minecraft
+      version: 4.x.x
+  interval: 15s
+  values:
+    resources:
+      requests:
+        cpu: 10m
+        memory: 16Mi
+      limits:
+        cpu: 2
+        memory: 16Gi
+    minecraftServer:
+      eula: "TRUE"
+      type: "CURSEFORGE"
+      cfServerMod: "https://www.curseforge.com/minecraft/modpacks/ftb-presents-direwolf20-1-12/install/3086774"
+      difficulty: "normal"
+      ops: "SADarkoro"
+      maxPlayers: "5"
+      maxTickTime: "-1"
+      spawnProtection: "0"
+      motd: "IFA2B in Direwolf weil Baum"
+      onlineMode: "false"
+      memory: "8192Mi"
+      externalIPs:
+        - 192.168.1.15
+    persistence:
+      storageClass: ceph-rbd
+      dataDir:
+        enabled: true
+        Size: 10Gi

@@ -52,3 +52,12 @@ metadata:
 spec:
   url: https://nextcloud.github.io/helm/
   interval: 30s
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: minecraft
+  namespace: flux
+spec:
+  url: https://itzg.github.io/minecraft-server-charts/
+  interval: 30s
