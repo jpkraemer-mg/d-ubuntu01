@@ -34,6 +34,8 @@ spec:
       version: "1.12.2"
       difficulty: "normal"
       ops: "SADarkoro"
+      levelType: "LARGEBIOMES"
+      worldSaveName: "dw20"
       maxPlayers: 5
       maxTickTime: -1
       spawnProtection: 0
@@ -43,6 +45,9 @@ spec:
       jvmOpts: "-Djava.awt.headless=true -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M"
       externalIPs:
         - 192.168.1.15
+      rcon:
+        enabled: true
+        password: 8ujbDfZVM6PLppLR7AmmrBowCxRt2@.u
     persistence:
       storageClass: ceph-rbd
       dataDir:
