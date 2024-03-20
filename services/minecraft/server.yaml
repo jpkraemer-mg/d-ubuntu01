@@ -30,7 +30,7 @@ spec:
     minecraftServer:
       eula: "TRUE"
       type: "CURSEFORGE"
-      cfServerMod: "https://www.curseforge.com/minecraft/modpacks/ftb-presents-direwolf20-1-12/download/3086774"
+      cfServerMod: "https://mediafilez.forgecdn.net/files/3086/774/FTB%20Presents%20Direwolf20%201.12-2.8.0.zip"
       version: "1.7.10"
       difficulty: "normal"
       ops: "SADarkoro"
