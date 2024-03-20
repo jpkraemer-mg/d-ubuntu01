@@ -1,0 +1,42 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: minecraft-server
+  namespace: minecraft
+spec:
+  chart:
+    spec:
+      chart: minecraft
+      sourceRef:
+        kind: HelmRepository
+        namespace: flux
+        name: minecraft
+      version: 1.x.x
+  interval: 15s
+  timeout: 2m
+  values:
+    podSecurityContext:
+      runAsNonRoot: false
+    ingress:
+      enabled: true
+      className: traefik
+      host: rcon.darkoro.quest
+      pathType: Prefic
+      tls:
+        - secretName: darkoro-quest-wildcard-certificate
+          hosts:
+            - rcon.darkoro.quest
+    resources:
+      requests:
+        cpu: 10m
+        memory: 16Mi
+      limits:
+        cpu: 100m
+        memory: 128Mi
+    rconWeb:
+      isAdmin: true
+      password: f7Gtkn8mLiaR.JFicfV9natVU2nj__Pu
+      rconHost: minecraft-server-minecraft-rcon.minecraft.svc.cluster.local
+      rconPassword: 8ujbDfZVM6PLppLR7AmmrBowCxRt2@.u
+      websocketRcon: true
