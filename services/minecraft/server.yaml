@@ -16,7 +16,7 @@ spec:
   interval: 15s
   values:
     image:
-      tag: java8-multiarch
+      tag: latest
     podSecurityContext:
       runAsNonRoot: false
     resources:
