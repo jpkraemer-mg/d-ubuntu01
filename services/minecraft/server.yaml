@@ -16,7 +16,7 @@ spec:
   interval: 15s
   values:
     image:
-      tag: multiarch-java8
+      tag: java8
     resources:
       requests:
         cpu: 10m
