@@ -38,6 +38,7 @@ spec:
       spawnProtection: 0
       motd: "IFA2B in Direwolf weil Baum"
       onlineMode: "default"
+      memory: 2048M,8192M
       jvmXXOpts: "-Xms2048M -Xmx8192M"
       jvmOpts: "-Djava.awt.headless=true -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M"
       externalIPs:
