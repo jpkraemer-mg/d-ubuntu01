@@ -31,7 +31,7 @@ spec:
       type: "FTBA"
       version: "1.7.10"
       generalPack: "https://www.curseforge.com/api/v1/mods/281999/files/3086774/download"
-      ftbModpackVersionID: 101
+      ftbModpackId: 101
       difficulty: "normal"
       ops: "SADarkoro"
       maxPlayers: 5
