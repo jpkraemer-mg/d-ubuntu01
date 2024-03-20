@@ -15,6 +15,8 @@ spec:
       version: 4.x.x
   interval: 15s
   values:
+    image:
+      tag: multiarch-java8
     resources:
       requests:
         cpu: 10m
@@ -25,8 +27,8 @@ spec:
     minecraftServer:
       eula: "TRUE"
       type: "CURSEFORGE"
-      version: "1.12"
-      cfServerMod: "ftb-presents-direwolf20-1-12"
+      version: "1.7.10"
+      cfServerMod: "https://www.curseforge.com/api/v1/mods/281999/files/3086774/download"
       difficulty: "normal"
       ops: "SADarkoro"
       maxPlayers: 5
