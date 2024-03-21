@@ -46,7 +46,7 @@ spec:
       externalIPs:
         - 192.168.1.15
       rcon:
-        enabled: false
+        enabled: true
         password: 8ujbDfZVM6PLppLR7AmmrBowCxRt2@.u
         externalTrafficPolicy: Cluster
     persistence:

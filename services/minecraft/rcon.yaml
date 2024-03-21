@@ -38,5 +38,4 @@ spec:
       isAdmin: true
       password: f7Gtkn8mLiaR.JFicfV9natVU2nj__Pu
       rconHost: minecraft-server-minecraft-rcon.minecraft.svc.cluster.local
-      rconPassword: 8ujbDfZVM6PLppLR7AmmrBowCxRt2@.u
       websocketRcon: true
