@@ -29,8 +29,12 @@ spec:
         memory: 16Gi
     minecraftServer:
       eula: "TRUE"
-      type: "FORGE"
-      downloadModpackUrl: "https://mediafilez.forgecdn.net/files/3086/774/FTB%20Presents%20Direwolf20%201.12-2.8.0.zip"
+      type: "AUTO_CURSEFORGE"
+      autoCurseForge:
+        apiKey:
+          key: $2a$10$qqCS0qE341qhM5MhBFtHOeyWfFrVGkLPixOAjOtJh.M6PH1KiKtCm
+        pageUrl: https://www.curseforge.com/minecraft/modpacks/ftb-presents-direwolf20-1-12
+        parallelDownloads: 8
       overrideServerProperties: true
       version: "1.12.2"
       difficulty: "normal"
