@@ -30,7 +30,7 @@ spec:
     minecraftServer:
       eula: "TRUE"
       type: "FORGE"
-      genericPack: "https://mediafilez.forgecdn.net/files/3086/774/FTB%20Presents%20Direwolf20%201.12-2.8.0.zip"
+      downloadModpackUrl: "https://mediafilez.forgecdn.net/files/3086/774/FTB%20Presents%20Direwolf20%201.12-2.8.0.zip"
       overrideServerProperties: true
       version: "1.12.2"
       difficulty: "normal"
