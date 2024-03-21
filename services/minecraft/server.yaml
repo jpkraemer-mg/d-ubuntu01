@@ -17,7 +17,7 @@ spec:
   timeout: 2m
   values:
     image:
-      tag: java8
+      tag: java8-multiarch
     podSecurityContext:
       runAsNonRoot: false
     resources:
