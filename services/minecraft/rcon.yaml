@@ -38,5 +38,5 @@ spec:
       isAdmin: true
       password: f7Gtkn8mLiaR.JFicfV9natVU2nj__Pu
       rconPassword: 8ujbDfZVM6PLppLR7AmmrBowCxRt2@.u
-      rconHost: darkoro.quest
+      rconHost: 88.99.65.50
       websocketRcon: true
