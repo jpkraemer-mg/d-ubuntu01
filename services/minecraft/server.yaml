@@ -48,6 +48,8 @@ spec:
       rcon:
         enabled: true
         password: 8ujbDfZVM6PLppLR7AmmrBowCxRt2@.u
+        serviceType: LoadBalancer
+        loadBalancerIP: 192.168.1.15
     persistence:
       storageClass: ceph-rbd
       dataDir:
