@@ -1,0 +1,86 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-server
+  namespace: minecraft
+  labels:
+    app: minecraft-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraft-server
+  template:
+    metadata:
+      labels:
+        app: minecraft-server
+    spec:
+      containers:
+        - name: minecraft-server
+          image: itzg/minecraft-server:java8-multiarch
+          ports:
+            - containerPort: 25565
+              name: server
+            - containerPort: 25575
+              name: rcon
+          env:
+            - name: EULA
+              value: "TRUE"
+            - name: OPS
+              value: |
+                SADarkoro
+            - name: RCON_PASSWORD
+              value: arschwassermitdickersosse
+            - name: ENABLE_QUERY
+              value: "FALSE"
+            - name: MAX_PLAYERS
+              value: "5"
+            - name: MAX_WORLD_SIZE
+              value: "15000"
+            - name: ANNOUNCE_PLAYER_ACHIEVEMENTS
+              value: "TRUE"
+            - name: ENABLE_COMMAND_BLOCK
+              value: "FALSE"
+            - name: GENERATE_STRUCTURES
+              value: "TRUE"
+            - name: HARDCORE
+              value: "FALSE"
+            - name: SNOOPER_ENABLED
+              value: "FALSE"
+            - name: MAX_TICK_TIME
+              value: "60000"
+            - name: SPAWN_ANIMALS
+              value: "TRUE"
+            - name: SPAWN_MONSTERS
+              value: "TRUE"
+            - name: SPAWN_NPCS
+              value: "TRUE"
+            - name: SPAWN_PROTECTION
+              value: "0"
+            - name: MODE
+              value: "survival"
+            - name: PVP
+              value: "FALSE"
+            - name: LEVEL_TYPE
+              value: "large_biomes"
+            - name: LEVEL
+              value: "dw20"
+            - name: ONLINE_MODE
+              value: "FALSE"
+            - name: ALLOW_FLIGHT
+              value: "TRUE"
+            - name: SERVER_NAME
+              value: "IFA2B -- Direwolf20"
+            - name: SERVER_PORT
+              value: "25565"
+            - name: MOD_PLATFORM
+              value: "AUTO_CURSEFORGE"
+            - name: CF_API_KEY
+              value: "$2a$10$qqCS0qE341qhM5MhBFtHOeyWfFrVGkLPixOAjOtJh.M6PH1KiKtCm"
+            - name: CF_SLUG
+              value: "ftb-presents-direwolf20-1-12"
+            - name: CF_PARALLEL_DOWNLOADS
+              value: "8"
+            - name: CF_FORCE_REINSTALL_MODLOADER
+              value: "TRUE"
