@@ -84,3 +84,5 @@ spec:
               value: "8"
             - name: CF_FORCE_REINSTALL_MODLOADER
               value: "TRUE"
+            - name: MEMORY
+              value: "8192M"
