@@ -21,8 +21,8 @@ spec:
     - port: 25565
       name: minecraft-server
       targetPort: server
-      nodePort: 65000
+      nodePort: 32766
     - port: 25575
       name: server-rcon
       targetPort: rcon
-      nodePort: 65001
+      nodePort: 32767
