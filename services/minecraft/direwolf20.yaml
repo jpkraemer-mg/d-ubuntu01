@@ -17,7 +17,7 @@ spec:
         app: minecraft-server
     spec:
       volumes:
-        - name: minecraft
+        - name: minecraft-server
           persistentVolumeClaim:
             claimName: minecraft-server-pvc
       containers:
