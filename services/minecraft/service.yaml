@@ -47,8 +47,8 @@ spec:
   loadBalancerIP: 192.168.1.15
   ports:
     - port: 25566
-      name: sf4-rcon
-      targetPort: sf4-rcon
+      name: sf4-server
+      targetPort: sf4-server
       nodePort: 32764
     - port: 25576
       name: sf4-rcon
