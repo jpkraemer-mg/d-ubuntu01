@@ -69,8 +69,6 @@ spec:
               value: "survival"
             - name: PVP
               value: "FALSE"
-            - name: LEVEL_TYPE
-              value: "large_biomes"
             - name: LEVEL
               value: "sf4"
             - name: ONLINE_MODE
