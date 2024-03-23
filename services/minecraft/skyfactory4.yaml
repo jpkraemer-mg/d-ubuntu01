@@ -71,8 +71,13 @@ spec:
               value: "FALSE"
             - name: LEVEL
               value: "sf4"
+            - name: LEVEL_TYPE
+              value: "DEFAULT"
+            - name: GENERATOR_SETTINGS
+              value: |
+                {"Topography-Preset":"Sky Factory 4"}
             - name: ONLINE_MODE
-              value: "FALSE"
+              value: "TRUE"
             - name: ALLOW_FLIGHT
               value: "TRUE"
             - name: SERVER_NAME
