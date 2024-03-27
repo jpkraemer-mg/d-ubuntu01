@@ -39,6 +39,8 @@ spec:
                 SADarkoro
             - name: RCON_PASSWORD
               value: arschwassermitdickersosse
+            - name: RCON_PORT
+              value: "25576"
             - name: ENABLE_QUERY
               value: "FALSE"
             - name: MAX_PLAYERS
