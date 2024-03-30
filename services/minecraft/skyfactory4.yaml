@@ -95,6 +95,6 @@ spec:
             - name: CF_PARALLEL_DOWNLOADS
               value: "8"
             - name: CF_FORCE_REINSTALL_MODLOADER
-              value: "TRUE"
+              value: "FALSE"
             - name: MEMORY
               value: "8192M"
